@@ -1,7 +1,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8"
-        ><title>Reddit Medical Images</title>
+        ><title>Login Page</title>
         <link rel="stylesheet" href="style.css">
       </head>
     <header>
@@ -14,4 +14,63 @@
           </ul>
         </nav>
     </header>
-    <body>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Sign-Up Page </title>
+        <style> 
+        Body {
+          font-family: Calibri, Helvetica, sans-serif;
+          background-color: grey;
+        }
+        button { 
+               background-color: darkblue; 
+               width: 100%;
+                color: white; 
+                padding: 15px; 
+                margin: 10px 0px; 
+                border: none; 
+                cursor: pointer; 
+                 } 
+         form { 
+                border: 3px solid #f1f1f1; 
+            } 
+         input[type=text], input[type=password] { 
+                width: 100%; 
+                margin: 8px 0;
+                padding: 12px 20px; 
+                display: inline-block; 
+                border: 2px solid rgb(196, 21, 59); 
+                box-sizing: border-box; 
+            }
+         button:hover { 
+                opacity: 0.7; 
+            } 
+          .cancelbtn { 
+                width: auto; 
+                padding: 10px 18px;
+                margin: 10px 5px;
+            } 
+              
+           
+         .container { 
+                padding: 25px; 
+                background-color: lightblue;
+            } 
+        </style> 
+        </head>  
+        <body>  
+            <center> <h1> Health Provider Sign-up </h1> </center> 
+            <form>
+                <div class="container"> 
+                    <label>Username : </label> 
+                    <input type="text" placeholder="Enter Username" name="username" required>
+                    <label>Password : </label> 
+                    <input type="password" placeholder="Enter Password" name="password" required>
+                    <button type="submit">Sign-up</button> 
+                    <input type="checkbox" checked="checked"> Remember me 
+                    <button type="button" class="cancelbtn"> Cancel</button> 
+                </div> 
+            </form>   
+        </body>   
+        </html>
+        
