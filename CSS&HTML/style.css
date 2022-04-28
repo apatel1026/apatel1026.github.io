@@ -8,6 +8,8 @@ body {
 	color: #ffffff;
 	word-wrap:break-word !important;
 	font-family: 'Open Sans', sans-serif;
+	align-items: center;
+	justify-content: center;
 	}
 
 h1 {
