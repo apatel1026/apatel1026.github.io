@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Bree+Serif);
 
 body {
-	background: blue;
+	background: #c6ad8f;
 	font-size:22px;
 	line-height: 32px;
 	color: #ffffff;
@@ -61,7 +61,7 @@ nav ul {
 	
 nav ul li {
 	display:inline-block;
-	background-color: grey;
+	background-color: #425664;
 	}
 
 nav a {
