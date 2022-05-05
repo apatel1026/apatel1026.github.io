@@ -77,19 +77,19 @@ nav a:hover {
 	background-color: #3b4d5a; 
 }
 
-/* Hide Dropdowns by Default */
+
 nav ul ul {
 	display: none;
 	position: absolute; 
-	top: 60px; /* the height of the main nav */
+	top: 60px;
 }
 	
-/* Display Dropdowns on Hover */
+
 nav ul li:hover > ul {
 	display:inherit;
 }
 	
-/* Fisrt Tier Dropdown */
+
 nav ul ul li {
 	width:170px;
 	float:none;
@@ -97,7 +97,7 @@ nav ul ul li {
 	position: relative;
 }
 
-/* Second, Third and more Tiers	*/
+
 nav ul ul ul li {
 	position: relative;
 	top:-60px; 
@@ -105,6 +105,6 @@ nav ul ul ul li {
 }
 
 	
-/* Change this in order to change the Dropdown symbol */
+
 li > a:after { content:  ' +'; }
 li > a:only-child:after { content: ''; }
