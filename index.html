@@ -17,6 +17,24 @@
     </header>
     <body>
       <script src="/Javascript/index.js"></script>
+
+      <!-- upvote button --> 
+      <!--
+      https://eugenkiss.github.io/7guis/tasks/#counter
+      -->
+      
+      <script type="module">
+        import { createApp } from 'vue'
+
+        createApp({
+          data() {
+            return {
+              count: 0
+            }
+          }
+        }).mount('#app')
+      </script>
+
       <div id="overlay"></div>
       <h2>Medical Image 1</h2>
         <div class="imageContainer">
@@ -61,7 +79,12 @@
           }
           
           </style>
-        <button class="button button1">Like</button>
+       <!--  <button class="button button1">Like</button> -->
+        <div id="app">
+          {{ count }}
+          <button1 @click="count++">Likes</button1>
+        </div>
+
         <button class="button button2">Dislike</button>
         <form action="/html/tags/html_form_tag_action.cfm" method="post">
           <div>
