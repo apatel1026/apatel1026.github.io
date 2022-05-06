@@ -1,3 +1,10 @@
+<!-- index.html -->
+<script type="module">
+  import { createApp } from 'vue'
+  import MyComponent from './my-component.js'
+
+  createApp(MyComponent).mount('#app')
+</script>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -17,32 +24,7 @@
     </header>
     <body>
       <!-- <script src="/Javascript/index.js"></script> -->
-      <script type="importmap">
-        {
-          "imports": {
-            "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
-          }
-        }
-      </script>
-      
 
-
-      <!-- upvote button --> 
-      <!--
-      https://eugenkiss.github.io/7guis/tasks/#counter
-      -->
-      
-      <script type="module">
-        import { createApp } from 'vue'
-
-        createApp({
-          data() {
-            return {
-              count: 0
-            }
-          }
-        }).mount('#app')
-      </script>
 
       <div id="overlay"></div>
       <h2>Medical Image 1</h2>
