@@ -129,3 +129,33 @@ li > a:only-child:after { content: ''; }
 	cursor: pointer;
 	/* Add a pointer on hover */
 }
+/*Blurring CSS*/
+:root {
+	--blur: 30px;
+	--element-display: initial;
+  }
+  
+  .imageContainer {
+	position: relative;
+	height: 300px;
+	width: 300px;
+	border: 1px solid black;
+  }
+  
+  .myText {
+	position: absolute;
+	z-index: 20;
+	display: var(--element-display);
+  }
+  
+  .myImage {
+	position: absolute;
+	filter: blur(var(--blur));
+	height: 100%;
+	width: 100%;
+  }
+  
+  .myButton {
+	position: absolute;
+	display: var(--element-display);
+  }
