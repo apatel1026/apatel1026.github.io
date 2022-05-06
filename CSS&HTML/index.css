@@ -168,5 +168,6 @@ li > a:only-child:after { content: ''; }
 	margin-right: auto;
 	top: 70%;
 	left: 25%;
+	right: 25%;
 	text-align: center;
   }
