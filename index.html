@@ -31,7 +31,7 @@
       <!--
       https://eugenkiss.github.io/7guis/tasks/#counter
       -->
-      
+      <!--
       <script type="module">
         import { createApp } from 'vue'
 
@@ -42,7 +42,23 @@
             }
           }
         }).mount('#app')
+
       </script>
+      
+      <script type="module">
+        import { createApp } from 'vue'
+
+        createApp({
+          data() {
+            return {
+              count2: 0
+            }
+          }
+        }).mount('#app2')
+
+      </script>
+    -->
+         
 
       <div id="overlay"></div>
       <h2>Medical Image 1</h2>
@@ -86,15 +102,38 @@
             background-color: red;
             color: white;
           }
-          
+
           </style>
-      
+              <script type="module">
+                import { createApp } from 'vue'
+
+                createApp({
+                  data() {
+                    return {
+                      count: 0
+                    }
+                  }
+                }).mount('#app')
+
+
+                createApp({
+                  data() {
+                    return {
+                      count2: 0
+                    }
+                  }
+                }).mount('#app2')
+
+              </script>
+        <!--BEGIN like button counters-->
         <div id="app">
-          
-          <button class="button button1" @click="count++"> {{ count }} Likes</button>
+          <button class="button button1" @click="count++"> {{ count }} Like</button>
         </div>
 
-        <button class="button button2">Dislike</button>
+        <div id="app2">
+        <button class="button button2" @click="count2++"> {{ count2 }} Dislike</button>
+        </div>
+        <!--END like button counters-->
         <form action="/html/tags/html_form_tag_action.cfm" method="post">
           <div>
           <textarea name="comments" id="comments" style="font-family:sans-serif;font-size:1.2em;">
@@ -145,9 +184,40 @@
             color: white;
           }
           
-          </style>
-        <button class="button button1">Like</button>
-        <button class="button button2">Dislike</button>
+          </style> 
+
+          <!--like button definition end-->
+          <script type="module">
+            import { createApp } from 'vue'
+
+            createApp({
+              data() {
+                return {
+                  count21: 0
+                }
+              }
+            }).mount('#app21')
+
+
+            createApp({
+              data() {
+                return {
+                  count22: 0
+                }
+              }
+            }).mount('#app22')
+
+          </script>
+
+          <div id="app21">
+            <button class="button button1" @click="count21++"> {{ count21 }} Like</button>
+          </div>
+
+          <div id="app22">
+            <button class="button button2" @click="count22++"> {{ count22 }} Dislike</button>
+          </div>
+          <!--like button definition end-->
+
         <h2>Medical Image 3</h2>
           <div class="imageContainer">
             <img class="myImage" src="https://images7.alphacoders.com/513/513904.jpg" height="300" width="300" alt="Medical Image 2" class="center"> 
@@ -192,8 +262,38 @@
           }
           
           </style>
-        <button class="button button1">Like</button>
-        <button class="button button2">Dislike</button>
+          <!--like button definition end-->
+          <script type="module">
+            import { createApp } from 'vue'
+
+            createApp({
+              data() {
+                return {
+                  count31: 0
+                }
+              }
+            }).mount('#app31')
+
+
+            createApp({
+              data() {
+                return {
+                  count32: 0
+                }
+              }
+            }).mount('#app32')
+
+          </script>
+          
+          <div id="app31">
+            <button class="button button1" @click="count31++"> {{ count31 }} Like</button>
+          </div>
+          
+          <div id="app32">
+            <button class="button button2" @click="count32++"> {{ count32 }} Dislike</button>
+          </div>
+          <!--like button definition end-->
+
         <h2>Medical Image 4</h2>
           <div class="imageContainer">
             <img class="myImage" src="https://images3.alphacoders.com/112/1124117.png" height="300" width="300" alt="Medical Image 2" class="center"> 
