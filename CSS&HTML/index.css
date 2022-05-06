@@ -145,6 +145,12 @@ li > a:only-child:after { content: ''; }
   .myText {
 	position: absolute;
 	z-index: 20;
+	margin-left: auto;
+	margin-right: auto;
+	top: 25%;
+	left: 0;
+	right: 0;
+	text-align: center;
 	display: var(--element-display);
   }
   
@@ -158,4 +164,9 @@ li > a:only-child:after { content: ''; }
   .myButton {
 	position: absolute;
 	display: var(--element-display);
+	margin-left: auto;
+	margin-right: auto;
+	top: 70%;
+	left: 35%;
+	text-align: center;
   }
