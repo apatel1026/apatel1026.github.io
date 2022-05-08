@@ -77,19 +77,19 @@ nav a:hover {
 	background-color: #000000; 
 }
 
-/* Hide Dropdowns by Default */
+
 nav ul ul {
 	display: none;
 	position: absolute; 
-	top: 60px; /* the height of the main nav */
+	top: 60px; 
 }
 	
-/* Display Dropdowns on Hover */
+
 nav ul li:hover > ul {
 	display:inherit;
 }
 	
-/* Fisrt Tier Dropdown */
+
 nav ul ul li {
 	width:170px;
 	float:none;
@@ -97,7 +97,7 @@ nav ul ul li {
 	position: relative;
 }
 
-/* Second, Third and more Tiers	*/
+
 nav ul ul ul li {
 	position: relative;
 	top:-60px; 
@@ -105,31 +105,23 @@ nav ul ul ul li {
 }
 
 	
-/* Change this in order to change the Dropdown symbol */
+
 li > a:after { content:  ' +'; }
 li > a:only-child:after { content: ''; }
 
 #overlay {
 	position: fixed;
-	/* Sit on top of the page content */
 	display: none;
-	/* Hidden by default */
 	width: 100%;
-	/* Full width (cover the whole page) */
 	height: 100%;
-	/* Full height (cover the whole page) */
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
 	background-color: rgba(255, 255, 255, 0.5);
-	/* Black background with opacity */
 	z-index: 2;
-	/* Specify a stack order in case you're using a different order for other elements */
 	cursor: pointer;
-	/* Add a pointer on hover */
 }
-/*Blurring CSS*/
 :root {
 	--blur: 30px;
 	--element-display: initial;
