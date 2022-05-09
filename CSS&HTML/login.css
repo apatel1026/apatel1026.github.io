@@ -111,3 +111,51 @@ nav ul ul ul li {
 
 li > a:after { content:  ' +'; }
 li > a:only-child:after { content: ''; }
+
+/* nav bar formatting with search bar additon */
+ul {
+	display: grid;
+	grid-template-columns: auto 1fr auto auto auto;
+	column-gap: 5px;
+  }
+  
+  input {
+	margin: 10px 0px;
+	padding: 10px;
+  }
+  
+  .button {
+	border: none;
+	color: white;
+	border-radius: 12px;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+  }
+  
+  .button1 {
+	background-color: white; 
+	color: black; 
+	border: 2px solid blue;
+  }
+  
+  .button1:hover {
+	background-color: blue;
+	color: white;
+  }
+  
+  .button2 {
+	background-color: white; 
+	color: black; 
+	border: 2px solid red;
+  }
+  
+  .button2:hover {
+	background-color: red;
+	color: white;
+  }
