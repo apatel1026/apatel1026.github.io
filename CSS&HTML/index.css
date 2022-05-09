@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Bree+Serif);
 
 body {
-	background: white;
+	background: #FFF;
 	font-size:22px;
 	line-height: 32px;
 	color: #ffffff;
@@ -49,7 +49,7 @@ p {
 
 nav {
 	margin: 50px 0;
-	background-color: #425664;
+	background-color: grey;
 }
 
 nav ul {
@@ -77,19 +77,19 @@ nav a:hover {
 	background-color: #000000; 
 }
 
-
+/* Hide Dropdowns by Default */
 nav ul ul {
 	display: none;
 	position: absolute; 
-	top: 60px; 
+	top: 60px; /* the height of the main nav */
 }
 	
-
+/* Display Dropdowns on Hover */
 nav ul li:hover > ul {
 	display:inherit;
 }
 	
-
+/* Fisrt Tier Dropdown */
 nav ul ul li {
 	width:170px;
 	float:none;
@@ -97,7 +97,7 @@ nav ul ul li {
 	position: relative;
 }
 
-
+/* Second, Third and more Tiers	*/
 nav ul ul ul li {
 	position: relative;
 	top:-60px; 
@@ -105,61 +105,119 @@ nav ul ul ul li {
 }
 
 	
-
+/* Change this in order to change the Dropdown symbol */
 li > a:after { content:  ' +'; }
 li > a:only-child:after { content: ''; }
 
-#overlay {
-	position: fixed;
-	display: none;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(255, 255, 255, 0.5);
-	z-index: 2;
-	cursor: pointer;
-}
 :root {
-	--blur: 30px;
-	--element-display: initial;
-  }
-  
-  .imageContainer {
-	position: relative;
-	height: 300px;
-	width: 300px;
-	border: 1px solid black;
-  }
-  
-  .myText {
-	position: absolute;
-	z-index: 20;
-	margin-left: auto;
-	margin-right: auto;
-	top: 25%;
-	left: 0;
-	right: 0;
-	text-align: center;
-	display: var(--element-display);
-  }
-  
-  .myImage {
-	position: absolute;
-	filter: blur(var(--blur));
-	height: 100%;
-	width: 100%;
-  }
-  
-  .myButton {
-	position: absolute;
-	display: var(--element-display);
-	margin-left: auto;
-	margin-right: auto;
-	top: 70%;
-	left: 25%;
-	right: 25%;
-	text-align: center;
-  }
+  --blur: 30px;
+  --element-display: initial;
+}
+
+.imageContainer {
+  position: relative;
+  height: 300px;
+  width: 300px;
+  border: 1px solid black;
+}
+
+.myText {
+  position: absolute;
+  z-index: 20;
+  margin-left: auto;
+  margin-right: auto;
+  top: 25%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  display: var(--element-display);
+}
+
+.myImage {
+  position: absolute;
+  filter: blur(var(--blur));
+  height: 100%;
+  width: 100%;
+}
+
+.myButton {
+  position: absolute;
+  display: var(--element-display);
+   margin-left: auto;
+  margin-right: auto;
+  top: 70%;
+  left: 25%;
+  right: 25%;
+  text-align: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  text-align: center;
+}
+
+.imageContainer {
+  margin: auto;
+}
+
+.buttonContainer {
+  display: inline-grid;
+  width: fit-content;
+  grid-auto-flow: column;
+  margin-left: 50%;
+  transform: translate(-50%);
+  margin-top: 10px;
+}
+
+.fb-comments {
+  display: grid !important;
+  width: 100%;
+  justify-items: center;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto auto;
+  column-gap: 5px;
+}
+
+input {
+  margin: 10px 0px;
+  padding: 10px;
+}
+
+.button {
+  border: none;
+  color: white;
+  border-radius: 12px;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid blue;
+}
+
+.button1:hover {
+  background-color: blue;
+  color: white;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid red;
+}
+
+.button2:hover {
+  background-color: red;
+  color: white;
+}

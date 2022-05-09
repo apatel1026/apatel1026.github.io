@@ -5,17 +5,8 @@
         <link rel="stylesheet" href="CSS&HTML/index.css">
       </head>
     <header>
-      <h1>Reddit for Imaging<span><INSTINCT></span></h1>
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="signup.html">Sign up</a></li>
-            <li><a href="contactus.html">Contact Us</a></li>
-          </ul>
-        </nav>
     </header>
-    <body>
+    <body id="app">
       <div id="fb-root"></div>
       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0"
         nonce="WRAZ1llN"></script>
@@ -27,471 +18,85 @@
           }
         }
       </script>
-         
+      <h1>Reddit for Imaging<span><INSTINCT></span></h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+           <input type="text" placeholder="Search..">
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Sign up</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+          </ul>
+        </nav>
 
       <div id="overlay"></div>
-      <h2>Medical Image 1</h2>
+      <div v-for="(post, index) in postsArray">
+        <h2>Medical Image {{ index + 1 }}</h2>
         <div class="imageContainer">
-          <img class="myImage" src="https://images.alphacoders.com/658/658238.jpg" height="300" width="300" alt="Medical Image 1" class="center"> </img>
+          <img class="myImage" :src="post.imageLink" height="300" width="300" alt="Medical Image 1" class="center"/>
           <p class="myText">Warning: the following contains graphic images</p>
           <button class="myButton" onClick="unblurImage()">Click To Proceed</button>
         </div>
-        <style>
-          .button {
-            border: .5px solid white;
-            border-radius: 12px;
-            color: white;
-            padding: 16px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            transition-duration: 0.4s;
-            cursor: pointer;
-          }
-          .button1 {
-            background-color: white; 
-            color: black; 
-            border: 2px solid blue;
-          }
-          
-          .button1:hover {
-            background-color: blue;
-            color: white;
-          }
-          
-          .button2 {
-            background-color: white; 
-            color: black; 
-            border: 2px solid red;
-          }
-          
-          .button2:hover {
-            background-color: red;
-            color: white;
-          }
-
-          </style>
-              <script type="module">
-                import { createApp } from 'vue'
-
-                createApp({
-                  data() {
-                    return {
-                      count: 0
-                    }
-                  }
-                }).mount('#app')
-
-
-                createApp({
-                  data() {
-                    return {
-                      count2: 0
-                    }
-                  }
-                }).mount('#app2')
-
-              </script>
-        
-        <div id="app">
-          <button class="button button1" @click="count++"> {{ count }} Like</button>
+        <div class="buttonContainer">
+          <button class="button button1" @click="post.likes++"> {{ post.likes }} Like</button>
+          <button class="button button2" @click="post.dislikes++"> {{ post.dislikes }} Dislike</button>
         </div>
+        <div class="fb-comments" data-href="https://apatel1026.github.io/index.html" data-width="" data-numposts="5" />
+      </div>
+      <script type="module">
+        import { createApp } from 'vue'
 
-        <div id="app2">
-        <button class="button button2" @click="count2++"> {{ count2 }} Dislike</button>
-        </div>
-      
-      
-          <div class="fb-comments" data-href="https://apatel1026.github.io/index.html" data-width="" data-numposts="5"></div>
+        createApp({
+          data() {
+            return {
+              postsArray: [
+                {
+                  imageLink: "https://images.alphacoders.com/658/658238.jpg",
+                  likes: 0,
+                  dislikes: 0,
+                  isBlurred: true,
+                },
+                {
+                  imageLink: "https://he.utexas.edu/images/easyblog_articles/243/GettyImages-823767128_high.jpg",
+                  likes: 0,
+                  dislikes: 0,
+                  isBlurred: true,
+                },
+                {
+                  imageLink: "https://images7.alphacoders.com/513/513904.jpg",
+                  likes: 0,
+                  dislikes: 0,
+                  isBlurred: true,
+                },
+                {
+                  imageLink: "https://images3.alphacoders.com/112/1124117.png",
+                  likes: 0,
+                  dislikes: 0,
+                  isBlurred: true,
+                },
+                {
+                  imageLink: "https://images7.alphacoders.com/513/513904.jpg",
+                  likes: 0,
+                  dislikes: 0,
+                  isBlurred: true,
+                },
+                {
+                  imageLink: "https://images3.alphacoders.com/112/1124117.png",
+                  likes: 0,
+                  dislikes: 0,
+                  isBlurred: true,
+                },
+                {
+                  imageLink: "https://images7.alphacoders.com/513/513904.jpg",
+                  likes: 0,
+                  dislikes: 0,
+                  isBlurred: true,
+                },
+              ]
+            }
+          }
+        }).mount('#app')
 
-
-       <h2>Medical Image 2</h2>
-        <div class="imageContainer">
-          <img class="myImage" src="https://he.utexas.edu/images/easyblog_articles/243/GettyImages-823767128_high.jpg" height="300" width="300" alt="Medical Image 2" class="center"> </img>
-          <p class="myText">Warning: the following contains graphic images</p>
-          <button class="myButton" onClick="unblurImage()">Click To Proceed</button>
-        </div>
-       <style>
-          .button {
-            border: none;
-            color: white;
-            padding: 16px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            transition-duration: 0.4s;
-            cursor: pointer;
-          }
-          
-          .button1 {
-            background-color: white; 
-            color: black; 
-            border: 2px solid blue;
-          }
-          
-          .button1:hover {
-            background-color: blue;
-            color: white;
-          }
-          
-          .button2 {
-            background-color: white; 
-            color: black; 
-            border: 2px solid red;
-          }
-          
-          .button2:hover {
-            background-color: red;
-            color: white;
-          }
-          
-          </style> 
-
-          
-          <script type="module">
-            import { createApp } from 'vue'
-
-            createApp({
-              data() {
-                return {
-                  count21: 0
-                }
-              }
-            }).mount('#app21')
-
-
-            createApp({
-              data() {
-                return {
-                  count22: 0
-                }
-              }
-            }).mount('#app22')
-
-          </script>
-
-          <div id="app21">
-            <button class="button button1" @click="count21++"> {{ count21 }} Like</button>
-          </div>
-
-          <div id="app22">
-            <button class="button button2" @click="count22++"> {{ count22 }} Dislike</button>
-          </div>
-         
-              <div class="fb-comments" data-href="https://apatel1026.github.io/index.html" data-width="" data-numposts="5"></div>
-              
-
-
-        <h2>Medical Image 3</h2>
-          <div class="imageContainer">
-            <img class="myImage" src="https://images7.alphacoders.com/513/513904.jpg" height="300" width="300" alt="Medical Image 2" class="center"> 
-            </img>
-            <p class="myText">Warning: the following contains graphic images</p>
-            <button class="myButton" onClick="unblurImage()">Click To Proceed</button>
-          </div>
-        <style>
-          .button {
-            border: none;
-            color: white;
-            padding: 16px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            transition-duration: 0.4s;
-            cursor: pointer;
-          }
-          
-          .button1 {
-            background-color: white; 
-            color: black; 
-            border: 2px solid blue;
-          }
-          
-          .button1:hover {
-            background-color: blue;
-            color: white;
-          }
-          
-          .button2 {
-            background-color: white; 
-            color: black; 
-            border: 2px solid red;
-          }
-          
-          .button2:hover {
-            background-color: red;
-            color: white;
-          }
-          
-          </style>
-          
-          <script type="module">
-            import { createApp } from 'vue'
-
-            createApp({
-              data() {
-                return {
-                  count31: 0
-                }
-              }
-            }).mount('#app31')
-
-
-            createApp({
-              data() {
-                return {
-                  count32: 0
-                }
-              }
-            }).mount('#app32')
-
-          </script>
-          
-          <div id="app31">
-            <button class="button button1" @click="count31++"> {{ count31 }} Like</button>
-          </div>
-          
-          <div id="app32">
-            <button class="button button2" @click="count32++"> {{ count32 }} Dislike</button>
-          </div>
-         
-          <div class="fb-comments" data-href="https://apatel1026.github.io/index.html" data-width="" data-numposts="5"></div>
-
-        <h2>Medical Image 4</h2>
-          <div class="imageContainer">
-            <img class="myImage" src="https://images3.alphacoders.com/112/1124117.png" height="300" width="300" alt="Medical Image 2" class="center"> 
-            </img>
-            <p class="myText">Warning: the following contains graphic images</p>
-            <button class="myButton" onClick="unblurImage()">Click To Proceed</button>
-          </div>
-        <style>
-          .button {
-            border: none;
-            color: white;
-            padding: 16px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            transition-duration: 0.4s;
-            cursor: pointer;
-          }
-          
-          .button1 {
-            background-color: white; 
-            color: black; 
-            border: 2px solid blue;
-          }
-          
-          .button1:hover {
-            background-color: blue;
-            color: white;
-          }
-          
-          .button2 {
-            background-color: white; 
-            color: black; 
-            border: 2px solid red;
-          }
-          
-          .button2:hover {
-            background-color: red;
-            color: white;
-          }
-          
-          </style>
-        <button class="button button1">Like</button>
-        <button class="button button2">Dislike</button>
-      <h2>Medical Image 5</h2>
-        <div class="imageContainer">
-          <img class="myImage" src="https://images7.alphacoders.com/513/513904.jpg" height="300" width="300" alt="Medical Image 2" class="center"> 
-          </img>
-          <p class="myText">Warning: the following contains graphic images</p>
-          <button class="myButton" onClick="unblurImage()">Click To Proceed</button>
-        </div>
-        <style>
-          .button {
-            border: none;
-            color: white;
-            padding: 16px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            transition-duration: 0.4s;
-            cursor: pointer;
-          }
-          
-          .button1 {
-            background-color: white; 
-            color: black; 
-            border: 2px solid blue;
-          }
-          
-          .button1:hover {
-            background-color: blue;
-            color: white;
-          }
-          
-          .button2 {
-            background-color: white; 
-            color: black; 
-            border: 2px solid red;
-          }
-          
-          .button2:hover {
-            background-color: red;
-            color: white;
-          }
-          
-          </style>
-        <button class="button button1">Like</button>
-        <button class="button button2">Dislike</button>
-        <h2>Medical Image 6</h2>
-          <div class="imageContainer">
-            <img class="myImage" src="https://images3.alphacoders.com/112/1124117.png" height="300" width="300" alt="Medical Image 2" class="center"> 
-            </img>
-            <p class="myText">Warning: the following contains graphic images</p>
-            <button class="myButton" onClick="unblurImage()">Click To Proceed</button>
-          </div>
-        <style>
-          .button {
-            border: none;
-            color: white;
-            padding: 16px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            transition-duration: 0.4s;
-            cursor: pointer;
-          }
-          
-          .button1 {
-            background-color: white; 
-            color: black; 
-            border: 2px solid blue;
-          }
-          
-          .button1:hover {
-            background-color: blue;
-            color: white;
-          }
-          
-          .button2 {
-            background-color: white; 
-            color: black; 
-            border: 2px solid red;
-          }
-          
-          .button2:hover {
-            background-color: red;
-            color: white;
-          }
-          
-          </style>
-        <button class="button button1">Like</button>
-        <button class="button button2">Dislike</button>
-        <h2>Medical Image 7</h2>
-          <div class="imageContainer">
-            <img class="myImage" src="https://images7.alphacoders.com/513/513904.jpg" height="300" width="300" alt="Medical Image 2" class="center"> 
-            </img>
-            <p class="myText">Warning: the following contains graphic images</p>
-            <button class="myButton" onClick="unblurImage()">Click To Proceed</button>
-          </div>
-        <style>
-          .button {
-            border: none;
-            color: white;
-            padding: 16px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            transition-duration: 0.4s;
-            cursor: pointer;
-          }
-          
-          .button1 {
-            background-color: white; 
-            color: black; 
-            border: 2px solid blue;
-          }
-          
-          .button1:hover {
-            background-color: blue;
-            color: white;
-          }
-          
-          .button2 {
-            background-color: white; 
-            color: black; 
-            border: 2px solid red;
-          }
-          
-          .button2:hover {
-            background-color: red;
-            color: white;
-          }
-          
-          </style>
-        <button class="button button1">Like</button>
-        <button class="button button2">Dislike</button>
-        <h2>Medical Image 8</h2>
-          <div class="imageContainer">
-            <img class="myImage" src="https://images3.alphacoders.com/112/1124117.png" height="300" width="300" alt="Medical Image 2" class="center"> 
-            </img>
-            <p class="myText">Warning: the following contains graphic images</p>
-            <button class="myButton" onClick="unblurImage()">Click To Proceed</button>
-          </div>
-       <style>
-        .button {
-          border: none;
-          color: white;
-          padding: 16px 32px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-size: 16px;
-          margin: 4px 2px;
-          transition-duration: 0.4s;
-          cursor: pointer;
-        }
-        
-        .button1 {
-          background-color: white; 
-          color: black; 
-          border: 2px solid blue;
-        }
-        
-        .button1:hover {
-          background-color: blue;
-          color: white;
-        }
-        
-        .button2 {
-          background-color: white; 
-          color: black; 
-          border: 2px solid red;
-        }
-        
-        .button2:hover {
-          background-color: red;
-          color: white;
-        }
-        
-        </style>
-      <button class="button button1">Like</button>
-      <button class="button button2">Dislike</button>
-      </body>
+      </script>
+  </body>
 </html>
