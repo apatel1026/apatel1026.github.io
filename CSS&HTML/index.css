@@ -108,7 +108,7 @@ nav ul ul ul li {
 /* Change this in order to change the Dropdown symbol */
 li > a:after { content:  ' +'; }
 li > a:only-child:after { content: ''; }
-
+/*blur fcnt styling*/
 :root {
   --blur: 30px;
   --element-display: initial;
@@ -168,7 +168,7 @@ h2 {
   transform: translate(-50%);
   margin-top: 10px;
 }
-
+/*fb styling*/
 .fb-comments {
   display: grid !important;
   width: 100%;

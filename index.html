@@ -1,12 +1,15 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <!--title of website-->
         <title>MedImgs</title>
         <link rel="stylesheet" href="CSS&HTML/index.css">
       </head>
     <header>
     </header>
+      <!--mounting vuejs to entire body-->
     <body id="app">
+      <!--fb commenting api,future->inhouse account-->
       <div id="fb-root"></div>
       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0"
         nonce="WRAZ1llN"></script>
@@ -19,12 +22,14 @@
         }
       </script>
       <h1>MedImgs<span><INSTINCT></span></h1>
+        <!--nav bar-->
         <nav>
           <ul>
             <li><a href="index.html">Home</a></li>
             <!--search bar additon-->
             <input type="text" placeholder="Search..">
             <li><a href="login.html">Login</a></li>
+              <!--Changed signup page to about us-->
             <li><a href="AbtUs.html">About us</a></li>
             <li><a href="contactus.html">Contact Us</a></li>
 
@@ -33,10 +38,15 @@
 
       <div id="overlay"></div>
       <div v-for="(post, index) in postsArray">
+        <!--static title string, dynamic post #-->
         <h2>Medical Image {{ index + 1 }}</h2>
+        <!--wrapping image in container for blur functionality-->
         <div class="imageContainer">
+          <!--changed static img src to reference object array-->
           <img class="myImage" :src="post.imageLink" height="300" width="300" alt="Medical Image 1" class="center"/>
+          <!--blur warning msg-->
           <p class="myText">Warning: the following contains graphic images</p>
+          <!--blur click msg-->
           <button class="myButton" onClick="unblurImage()">Click To Proceed</button>
         </div>
         <div class="buttonContainer">
@@ -45,12 +55,14 @@
         </div>
         <div class="fb-comments" data-href="https://apatel1026.github.io/index.html" data-width="" data-numposts="5" />
       </div>
+      <!--vujs optomization, could pull obejcts from sql database-->
       <script type="module">
         import { createApp } from 'vue'
 
         createApp({
           data() {
             return {
+              /*object array, could include title into this but static titles works for now*/
               postsArray: [
                 {
                   imageLink: "https://images.alphacoders.com/658/658238.jpg",
@@ -97,6 +109,7 @@
               ]
             }
           }
+          /* mounting vuejs to body*/
         }).mount('#app')
 
       </script>

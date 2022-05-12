@@ -71,14 +71,17 @@ button {
             <label>Email Address : </label> 
             <input type="text" placeholder="Enter Email Address" name="username" required>
             <label>Password : </label> 
+            <!--password re-entry verfication-->
             <input type="password" placeholder="Enter Password" name="password" required>
             <label>Re-Enter Password : </label> 
             <input type="password" placeholder="Re-Enter Password" name="password" required>
+            <!--NPI req. addition, unclear to end user where physician gate came into site-->
             <label>National Provider Identification Number (NPI) : </label> 
             <input type="password" placeholder="Enter NPI" name="NPI" required>
             <button type="submit">Sign-up</button> 
             <input type="checkbox" checked="checked"> Remember me 
-            <button type="button" class="cancelbtn"> Cancel</button> 
+            <!--added cancel button navigation to home-->
+            <button onclick="location.href='home.html'";type="button" class="cancelbtn"> Cancel</button> 
         </div> 
     </form>   
 </body>   
